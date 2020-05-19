@@ -1,0 +1,6 @@
+FACTS:	
+	fact robot("Mybom");
+	fact user("Eunji");
+	fact ActionID(1);
+	fact TestAgent("agent://testAgent");
+	

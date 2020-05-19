@@ -1,0 +1,47 @@
+PLAN CONCLUDE SubscribeTest($state){
+	PRECONDITION:
+		$state == "start";
+	BODY:
+		PERFORM  startLog("CONCLUDE", "SubscribeTest");
+		UPDATE (SubscribeTest($before)) (SubscribeTest("query"));
+		PERFORM endLog("CONCLUDE", "SubscribeTest");
+	UTILITY: 1;
+}
+PLAN CONCLUDE SubscribeTest($state){
+	PRECONDITION:
+		$state == "query";
+	BODY:
+		PERFORM  startLog("CONCLUDE", "SubscribeTest");
+		PERFORM TaskQuery("JAMTEST", $state);
+		UPDATE (SubscribeTest($before)) (SubscribeTest("request"));
+		PERFORM endLog("CONCLUDE", "SubscribeTest");
+	UTILITY: 1;
+}
+PLAN CONCLUDE SubscribeTest($state){
+	PRECONDITION:
+		$state == "request";
+	BODY:
+		PERFORM  startLog("CONCLUDE", "SubscribeTest");
+		PERFORM TaskRequest("JAMTEST", $state);
+		RETRIEVE SubscribeTest($current);
+		PERFORM PrintString($current);
+		PERFORM endLog("CONCLUDE", "SubscribeTest");
+	UTILITY: 1;
+}
+PLAN CONCLUDE SubscribeTest($state){
+	PRECONDITION:
+		$state == "retract";
+	BODY:
+		PERFORM  startLog("CONCLUDE", "SubscribeTest");
+		RETRACT SubscribeTest;
+		PERFORM endLog("CONCLUDE", "SubscribeTest");
+	UTILITY: 1;
+}
+PLAN CONCLUDE SubscribeTest($state){
+	PRECONDITION:
+	BODY:
+		PERFORM  startLog("CONCLUDE", "SubscribeTest");
+		PERFORM endLog("CONCLUDE", "SubscribeTest");
+	UTILITY: 0;
+}
+

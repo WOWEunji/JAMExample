@@ -1,0 +1,9 @@
+PLAN PERFORM TaskQuery($task_name, $task_type){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+		FACT TestAgent($address);
+	BODY:
+		PERFORM startLog("PERFORM", "TaskQuery");
+		$queryResult = $communicationInstance.sendQuery($address, "(Robot_task \"" + $task_name+ "\" \"" + $task_type+ "\")");	
+		PERFORM endLog("PERFORM", "TaskQuery");
+}

@@ -1,0 +1,54 @@
+
+PLAN PERFORM Query($query,$destination,$result){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+	BODY:
+		PERFORM startLog("PERFORM", "Query");
+		PERFORM argumentLog("query", $query);
+		PERFORM argumentLog("destination", $destination);
+		
+
+		$result = $communicationInstance.sendQuery($destination,$query);
+
+		
+		PERFORM endLog("PERFORM", "Query");
+}
+
+PLAN PERFORM Request($query,$destination,$result){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+	BODY:
+		PERFORM startLog("PERFORM", "Query");
+		PERFORM argumentLog("query", $query);
+		PERFORM argumentLog("destination", $destination);
+		
+
+		$result = $communicationInstance.request($destination,$query);
+
+		
+		PERFORM endLog("PERFORM", "Query");
+}
+
+PLAN PERFORM Send($query,$destination){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+	BODY:
+		PERFORM startLog("PERFORM", "Query");
+		PERFORM argumentLog("query", $query);
+		PERFORM argumentLog("destination", $destination);
+		
+
+		$communicationInstance.send($destination,$query);
+
+		
+		PERFORM endLog("PERFORM", "Query");
+}
+
+PLAN ACHIEVE AssertToLTM($data){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+	BODY:
+		PERFORM startLog("ACHIEVE", "AssertToLTM");
+		$communicationInstance.assertToLTM($data);
+		PERFORM endLog("ACHIEVE", "AssertToLTM");
+}

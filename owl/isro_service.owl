@@ -1,0 +1,1485 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.robot-arbi.kr/ontologies/isro_service.owl#"
+     xml:base="http://www.robot-arbi.kr/ontologies/isro_service.owl"
+     xmlns:isro_service="http://www.robot-arbi.kr/ontologies/isro_service.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:isro="http://www.robot-arbi.kr/ontologies/isro.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#">
+    <owl:Ontology rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl">
+        <owl:versionIRI rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://www.robot-arbi.kr/ontologies/isro.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://www.robot-arbi.kr/ontologies/isro_cap.owl/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#accessToWorldModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#accessToWorldModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#consistOfStatement -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#consistOfStatement">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#containsActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#containsActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#containsProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#containsProtocol">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#containsResponsibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#containsResponsibility">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#containsRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#containsRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasLivenessResponsibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasLivenessResponsibility">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleResponsibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanBody -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanBody">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanContext">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanEffect -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanEffect">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanFailure -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanFailure">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanPrecondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanPrecondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasPlanElement"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRolePermission -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRolePermission">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RolePermission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleProtocol">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleResponsibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleResponsibility">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleAttribute"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasSafetyResponsibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasSafetyResponsibility">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasRoleResponsibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceConcludeCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceConcludeCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceConcludeCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceDurativeCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceDurativeCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceDurativeCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServicePostCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServicePostCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePostCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServicePreCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServicePreCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#hasServiceCondition"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePreCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#performFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#performFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInServiceModel"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#targetAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#targetAction">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#targetGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#targetGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#relationInTaskModel"/>
+        <rdfs:range rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#accessTo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#accessTo"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#argument -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#argument"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#attributes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#attributes"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#conditionalStatement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#conditionalStatement"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#documentation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#documentation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#expressionStatement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#expressionStatement"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#utility -->
+
+    <owl:DatatypeProperty rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#utility">
+        <rdfs:domain rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#AchieveGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#AchieveGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#AdditiveExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#AdditiveExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#And -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#And">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Assign -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assign">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Atomic -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Atomic">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ConcludeGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ConcludeGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Customer -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Customer">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Do -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Do">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#DoAll -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#DoAll">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#DoAny -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#DoAny">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Educator -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Educator">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Else -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Else">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Execute -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Execute">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fail -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fail">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fellow -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fellow">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#For -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#For">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#If -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#If">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#InformProtocol -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#InformProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#IsTrue -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#IsTrue">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#LivenessResponsibility -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#LivenessResponsibility">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Load -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Load">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#LoadFromURL -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#LoadFromURL">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#LoadPackage -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#LoadPackage">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#MaintainGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MaintainGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#MultiplicativeExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MultiplicativeExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Or -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Or">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Parallel -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Parallel">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+        <owl:disjointWith rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Post -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Post">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PostGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PostGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PrimaryExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PrimaryExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#QueryProtocol -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#QueryProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Receptionist -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Receptionist">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RelationalExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RelationalExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RequestProtocol -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RequestProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ResponseProtocol -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ResponseProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Retrieve -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retrieve">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Role -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleActivity -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleActivity">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleComponent -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleComponent">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RolePermission -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RolePermission">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#SafetyResponsiblity -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#SafetyResponsiblity">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RoleResponsibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Service -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Service">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceComponent -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceComponent">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceModelComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceConcludeCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceConcludeCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceDurativeCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceDurativeCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceModelComponent -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceModelComponent"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePostCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePostCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePreCondition -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServicePreCondition">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ServiceCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#TaskModelComponent"/>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#UnaryExpression -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#UnaryExpression">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Unpost -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Unpost">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#UnpostGoal -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#UnpostGoal">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Update -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Update">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Wait -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Wait">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#When -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#When">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#While -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#While">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#:By -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#:By">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#:ByNot -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#:ByNot">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#:Utility -->
+
+    <owl:Class rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#:Utility">
+        <rdfs:subClassOf rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression"/>
+        <expressionStatement>$size = $glUtility.retirevePathSize($path)</expressionStatement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression002">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression"/>
+        <expressionStatement>$nextPath = $glUtility.retrieveGLExpression($path,0)</expressionStatement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression003">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression"/>
+        <expressionStatement>$formerPath = $nextPath</expressionStatement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression004">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression"/>
+        <expressionStatement>$nextPath = $glUtility.retrieveGLExpression($path,$i)</expressionStatement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert"/>
+        <accessTo>CurrentLocation($nextPath)</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact"/>
+        <accessTo>GLUtility($glUtility)</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact002">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact"/>
+        <accessTo>route($path)</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact003">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact"/>
+        <accessToWorldModel rdf:resource="http://www.robot-arbi.kr/ontologies/isro_cap.owl#BaseMotionCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction"/>
+        <targetGoal rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#MovingExceptionHandler"/>
+        <accessTo>MovedTo</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction002">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction"/>
+        <targetGoal rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#startLog"/>
+        <accessTo>ACHIEVE, RequestMove</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction003">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction"/>
+        <targetGoal rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#RequestMove"/>
+        <accessTo>$nextPath</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction004">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction"/>
+        <targetGoal rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#endLog"/>
+        <accessTo>ACHIEVE, MoveTo</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+        <hasPlanBody rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody_MoveToDestination"/>
+        <hasPlanContext rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext_MoveToDestination"/>
+        <hasPlanEffect rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect_MoveToDestination"/>
+        <hasPlanFailure rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure_MoveToDestination"/>
+        <hasPlanPrecondition rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition_MoveToDestination"/>
+        <performFor rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#MovedTo"/>
+        <attributes>&quot;$destination : robot&apos;s destination to move. ex)\&quot;(position $x $y $z)\&quot;</attributes>
+        <documentation>Request ActionManager to Move Robot to the designated position.</documentation>
+        <utility rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20000</utility>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#MovedTo -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MovedTo">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#AchieveGoal"/>
+        <knowrob:toLocation rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#_destination"/>
+        <argument>$destination</argument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#MovingExceptionHandler -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MovingExceptionHandler">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering001">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression001"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction002"/>
+        <isro:fisrtOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isro:fisrtOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering002">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression002"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering003">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering004">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct_For001"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering005">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction004"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct_For001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering006 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering006">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression004"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression003"/>
+        <isro:fisrtOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isro:fisrtOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering007 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering007">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction003"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering008">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract001"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction003"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering009">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PartialOrdering010">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#PartialOrdering-Strict"/>
+        <knowrob:occursAfterInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact002"/>
+        <knowrob:occursBeforeInOrdering rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact001"/>
+        <isro:fisrtOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isro:fisrtOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody_MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody_MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression001"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression002"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction002"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction004"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct_For001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct_For001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanConstruct_For001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#For"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression003"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#ActionExpression004"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert001"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction003"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract001"/>
+        <conditionalStatement>FACT a; $i &lt; $size;$i = $i + 1</conditionalStatement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext_MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext_MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact003"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect_MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect_MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure_MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure_MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#GoalAction001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition_MoveToDestination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition_MoveToDestination">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact001"/>
+        <consistOfStatement rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#RequestMove -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#RequestMove">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract001">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract"/>
+        <accessTo>CurrentLocation($formerPath)</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract002">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract"/>
+        <accessTo>CurrentLocation($destination);</accessTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#_Receptionist -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#_Receptionist">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#Receptionist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#_destination -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#_destination">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#endLog -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#endLog">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.robot-arbi.kr/ontologies/isro_service.owl#startLog -->
+
+    <owl:NamedIndividual rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#startLog">
+        <rdf:type rdf:resource="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#AchieveGoal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#ConcludeGoal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#MaintainGoal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PerformGoal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PostGoal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#UnpostGoal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Assert"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Fact"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Retract"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Update"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Goal"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#Plan"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanElement"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanStatement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanBody"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanContext"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanEffect"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanFailure"/>
+            <rdf:Description rdf:about="http://www.robot-arbi.kr/ontologies/isro_service.owl#PlanPrecondition"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,15 @@
+PLAN PERFORM TaskRequest($task_name, $task_type){
+	PRECONDITION:
+		FACT Communication($communicationInstance);
+		FACT TestAgent($address);
+	BODY:
+		PERFORM startLog("PERFORM", "TaskRequest");
+		$queryResult = $communicationInstance.request($address, "(Robot_task \"" + $task_name+ "\" \"" + $task_type+ "\")");
+		WAIT Robot_task($a, $b);
+		RETRACT Robot_task($c, $d);
+		UPDATE (ActionID($id)) (ActionID($newID));
+		PERFORM endLog("PERFORM", "TaskRequest");
+}
+
+		
+		

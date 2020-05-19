@@ -1,0 +1,98 @@
+﻿
+http://www.arbi.com/ontologies/arbi.owl#
+use_module(library(semweb/rdf_db)).    // \B8\F0\B5\E2
+rdf_load('initial.owl'), rdf(X, Y, Z).
+rdf(S,P,O)  <- \BCҹ\AE\C0ڰ\A1 \BF\C0\B8\E9 \BEȵ\CA $x \C0̰͵\B5 \BEƵ\CA
+rdf_has(S,P,O)
+rdf_subject($X) \C0ִ\C2\C1\F6 Ȯ\C0\CE$
+rdf_assert(+Subject, +Predicate, +Object) is det \B5\A5\C0\CC\C5\CD \C3߰\A1
+rdf_reachable($S, +P, $O)
+sparql \C1\FA\C0ǵ\B5 \B0\A1\B4\C9
+!(not)
+1 $- time((open('file.txt' , write, Stream),forall(forward(A,B),write(Stream,_)),close(Stream))).
+
+
+
+(arbi:checkCliff "arbi:turtlebot01" $Cliff)
+(arbi:emptyBattery "arbi:turtlebot01" $Empty)
+(arbi:batteryStatus "arbi:turtlebot01" $Status)
+(arbi:batteryRemain "arbi:turtlebot01" $Remain)
+(arbi:batteryRemain $Robot $Remain)
+(knowrob:in-ContGeneric $A $B)
+(arbi:isOnWorking "http://www.arbi.com/ontologies/GuideService.owl#Person002" $Result)
+(arbi:afterSchedule $A $B)
+(arbi:afterSchedule "http://www.arbi.com/ontologies/NotifyMeeting.owl#Schedule_201611041" $B)
+(arbi:locatedInRoom $Object $Room)
+(arbi:lookAt "http://www.arbi.com/ontologies/arbi.owl#UNKNOWN" $Robot)
+(arbi:lookAt "arbi:UNKNOWN" $Robot)
+(arbi:personLocatedInRoom $Person $Room)
+(arbi:latestObjectXpoint $X $Object)
+(arbi:latestObjectYpoint $Y $Object)
+(arbi:latestObjectZpoint $Z $Object)
+(arbi:checkBlock "arbi:turtlebot01" $Block)
+(arbi:locatedInArtifactContainer $A $B)
+
+(arbi:locatedInRoom arbi:turtlebot01 Room)
+(arbi:insideAreaOfRoom arbi:turtlebot01 Room)
+(arbi:inFrontAreaOfRoom arbi:turtlebot01 Room)
+(arbi:emptyBattery arbi:turtlebot01 Empty)
+(arbi:batteryRemain arbi:turtlebot01 Remain)
+(arbi:batteryStatus arbi:turtlebot01 Status)
+(arbi:checkWheeldrop arbi:turtlebot01 Wheeldrop)
+(arbi:checkCliff arbi:turtlebot01 Cliff)
+(arbi:checkBumper arbi:turtlebot01 Bumper)
+(arbi:checkBlock arbi:turtlebot01 Block)
+(knowrob:inCenterOf test_sp:cup3 A)
+
+
+
+(rule (fact (arbi:locatedInRoom arbi:turtlebot01 $Room)) --> (notify (arbi:locatedInRoom arbi:turtlebot01 $Room)) (id 1))
+(rule (fact (arbi:insideAreaOfRoom arbi:turtlebot01 $Room)) --> (notify (arbi:insideAreaOfRoom arbi:turtlebot01 $Room)) (id 1))
+(rule (fact (arbi:inFrontAreaOfRoom arbi:turtlebot01 $Room)) --> (notify (arbi:inFrontAreaOfRoom arbi:turtlebot01 $Room)) (id 1))
+(rule (fact (arbi:emptyBattery arbi:turtlebot01 $Empty)) --> (notify (arbi:emptyBattery arbi:turtlebot01 $Empty)) (id 1))
+(rule (fact (arbi:batteryRemain $Robot $Empty)) --> (notify (arbi:batteryRemain $robot $Empty)) (id 1))
+(rule (fact (arbi:speechContents $SpeechPerception $Contens)) --> (notify (arbi:speechContents $SpeechPerception $Contens)) (id 1))
+(rule (fact (arbi:facePerceived $UserID $Name)) --> (notify (arbi:facePerceived $UserID $Name)) (id 3))
+(rule (fact (arbi:voicePerceived $userID $Content)) --> (notify (arbi:voicePerceived $userID $Content)) (id 2))
+(rule (fact (arbi:notFollowRobot $Object $Robot)) --> (notify (arbi:notFollowRobot $Object $Robot)) (id 2))
+(id 1)
+
+
+(rule (fact (arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")) --> (notify (arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")) (id 5))
+(rule (fact (arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")) --> (notify (arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")) (id 4))
+(rule (fact (arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_001")) --> (notify (arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_001")) (id 3))
+(rule (fact (arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_001")) --> (notify (arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_001")) (id 2))
+
+
+(arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")
+(arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")
+(arbi:inFrontAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_001")
+(arbi:insideAreaOfRoom "arbi:turtlebot01" "arbi:OfficeRoom_002")
+
+
+
+		if(notify.contains("(arbi:inFrontAreaOfRoom \"arbi:turtlebot01\" \"arbi:OfficeRoom_002\")")){
+			this.unsubscribe(CM_ADDRESS, "(id 4");
+			String request = "(speak (textToSpeech \"사무실 이번방 앞에 있습니다\") (actionID \"4\"))";
+			this.request(PERCEPTION_ADRESS, request);
+		}
+		if(notify.contains("(arbi:insideAreaOfRoom \"arbi:turtlebot01\" \"arbi:OfficeRoom_002\")")){
+			this.unsubscribe(CM_ADDRESS, "(id 5");
+			String request = "(speak (textToSpeech \"사무실 이번방 안에 있습니다\") (actionID \"5\"))";
+			this.request(PERCEPTION_ADRESS, request);
+		}
+			
+		if(notify.contains("(arbi:inFrontAreaOfRoom \"arbi:turtlebot01\" \"arbi:OfficeRoom_001\")")){
+			this.unsubscribe(CM_ADDRESS, "(id 2");
+			String request = "(speak (textToSpeech \"사무실 일번방 앞에 있습니다\") (actionID \"2\"))";
+			this.request(PERCEPTION_ADRESS, request);
+		}
+		if(notify.contains("(arbi:insideAreaOfRoom \"arbi:turtlebot01\" \"arbi:OfficeRoom_001\")")){
+			this.unsubscribe(CM_ADDRESS, "(id 3");
+			String request = "(speak (textToSpeech \"사무실 일번방 안에 있습니다\") (actionID \"3\"))";
+			this.request(PERCEPTION_ADRESS, request);
+		}
+
+
+
+                                                                           

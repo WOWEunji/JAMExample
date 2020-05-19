@@ -1,0 +1,10 @@
+PLAN PERFORM PrintString($data){
+	PRECONDITION:
+		FACT CustomFunction($function);
+	BODY:
+		PERFORM startLog("PERFORM", "PrintString");
+	
+		$function.cumstom_print($data);
+		
+		PERFORM endLog("PERFORM", "PrintString");
+}

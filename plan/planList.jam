@@ -1,0 +1,9 @@
+PREFIXES:
+	PREFIX arbi: <http://www.arbi.com//ontologies#>;
+
+Plan PERFORM loadPlanPackage(){
+	PRECONDITION:
+		FACT ExtraUtility($helper);
+	BODY:
+		$helper.loadPlanPackage("plan/Example");			
+}

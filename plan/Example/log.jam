@@ -1,0 +1,115 @@
+
+/**
+ * @package_name	: common
+ * @filename		: log.jam
+ * @author			: 占쌍븝옙占쏙옙
+ * @created_date	: 2011-03-15
+ * @updated_date	: 
+ *
+ * 
+ */
+ 
+
+
+ 
+PLAN PERFORM startLog($behave, $name) {
+	NAME:
+		"Start Log"
+	
+	PRECONDITION:
+		FACT LOG;
+		
+	BODY:
+		System.out.println("JAM PLAN "+$behave+" "+$name);
+		
+}
+PLAN PERFORM startLog($behave, $name) {
+	NAME:
+		"Start Log"
+	
+	PRECONDITION:
+	
+	UTILITY:-1;
+		
+	BODY:
+		
+}
+
+PLAN PERFORM endLog($behave, $name) {
+	NAME:
+		"end Log"
+	
+	PRECONDITION:
+		FACT LOG;
+		
+	BODY:
+		System.out.println("JAM PLAN "+$behave+" "+$name+"EXECUTED");
+		
+}
+PLAN PERFORM endLog($behave, $name) {
+	NAME:
+		"end Log"
+	
+	PRECONDITION:
+	
+	UTILITY:-1;
+		
+	BODY:
+		
+}
+PLAN PERFORM argumentLog($argument, $value){
+	NAME:
+		"argument Log"
+	
+	PRECONDITION:
+		FACT LOG;
+		
+	BODY:
+		System.out.println("	"+$argument+" : "+ $value);
+		
+}
+PLAN PERFORM argumentLog($argument, $value) {
+	NAME:
+		"argument Log"
+	
+	PRECONDITION:
+		
+	UTILITY:-1;
+		
+	BODY:
+		
+}
+PLAN PERFORM planNotSatisfied(){
+	PRECONDITION:
+		FACT LOG;
+	BODY:
+		System.out.println("	Plan Precondition not Satisfied");	
+}
+PLAN PERFORM planNotSatisfied(){
+	UTILITY:-1;
+	BODY:
+}
+
+PLAN PERFORM loadFail(){
+	PRECONDITION:
+		FACT LOG;
+	BODY:
+		System.out.println("	DataBase is not Loaded");
+}
+
+PLAN PERFORM loadFail(){
+	UTILITY:-1;
+	BODY:
+}
+
+PLAN PERFORM expressionNotSupport(){
+	PRECONDITION:
+		FACT LOG;
+	BODY:
+		System.out.println("	Behavior Expression is not Support");
+}
+
+PLAN PERFORM expressionNotSupport(){
+	UTILITY:-1;
+	BODY:
+}

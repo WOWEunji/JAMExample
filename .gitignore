@@ -1,0 +1,11 @@
+#Compiled source
+.class
+
+#Logs
+.log
+
+#folder
+bin/
+
+#file
+src/taskManager/TaskManager.java
